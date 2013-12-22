@@ -16,19 +16,16 @@ Usage:
 
 1) Edit kcopy-rangeed.py and setup variables:
 
-keyspace = 'KeyspaceName'
-# keyspace for source and destination cluster.
-maxTTL = 2592000 # or None
-# Total seconds of data in source cluster that will be ignored if older than this value. Set None if you need copy without tt
+keyspace = 'KeyspaceName' # keyspace for source and destination cluster.
+maxTTL = 2592000 # or None. Total seconds of data in source cluster that will be ignored if older than this value. Set None if you need copy without tt
 
 maxRows = 10
-maxColumnsPerRow = 4000
-# maxRows * maxColumnsPerRow = columns number per one batch read/insert
+maxColumnsPerRow = 4000 # maxRows * maxColumnsPerRow = columns number per one batch read/insert
 
 columnFamily = 'ColumnFamilyName'
-startToken = None
-# if transfer failed, you can start from last token. Type "grep process kcopy.log | tail" and
-# copy start_token (the first)
+
+startToken = None # if transfer failed, you can start from last token. Type "grep process kcopy.log | tail" and copy start_token (the first) 
+
 destinationCluster = ['192.168.1.1:9160','192.168.1.2:9160']
 
 2) Run:
