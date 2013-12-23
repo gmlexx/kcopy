@@ -20,7 +20,7 @@ keyspace = 'KeyspaceName' # keyspace for source and destination cluster.
 maxTTL = 2592000 # or None. Total seconds of data in source cluster that will be ignored if older than this value. Set None if you need copy without tt
 
 maxRows = 10
-maxColumnsPerRow = 4000 # maxRows * maxColumnsPerRow = columns number per one batch read/insert
+maxColumnsPerRow = 4000 # maxRows * maxColumnsPerRow = columns number per one batch insert
 
 columnFamily = 'ColumnFamilyName'
 

@@ -64,7 +64,7 @@ for start_token, finish_token in ranges:
         try:
             rows = {}
             maxttl = 0
-            for key, columns in source_cf.get_range(start_token=start_token, finish_token=finish_token, row_count=maxRows, column_count=maxColumnsPerRow, include_timestamp=True):
+            for key, columns in source_cf.get_range(start_token=start_token, finish_token=finish_token, column_count=maxColumnsPerRow, include_timestamp=True):
                 ci = {}
                 timestamp = 0
                 if len(columns) < maxColumnsPerRow:
