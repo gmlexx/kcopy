@@ -14,8 +14,8 @@ columnFamily = 'ColumnFamilyName'
 startToken = None
 source_host = sys.argv[1]
 destinationCluster = ['192.168.1.1:9160','192.168.1.2:9160']
-source = pycassa.ConnectionPool(keyspace=keyspace, server_list=[':'.join([source_host,'9160'])], prefill=False, max_retries=-1)
-dest = pycassa.ConnectionPool(keyspace=keyspace, server_list=destinationCluster, prefill=False, max_retries=-1)
+source = pycassa.ConnectionPool(keyspace=keyspace, server_list=[':'.join([source_host,'9160'])], prefill=False, max_retries=-1, timeout=None)
+dest = pycassa.ConnectionPool(keyspace=keyspace, server_list=destinationCluster, prefill=False, max_retries=-1, timeout=None)
 
 source_cf = pycassa.ColumnFamily(source, columnFamily)
 dest_cf = pycassa.ColumnFamily(dest, columnFamily)
